@@ -1,0 +1,54 @@
+TRANSACTION.CATEGORY,DISCRETIONARY
+Advertising,1
+ATM/Cash Withdrawals,1
+Automotive Expenses,1
+Business Miscellaneous,1
+Cable/Satellite Services,0
+Charitable Giving,1
+Checks,1
+Child/Dependent Expenses,0
+Clothing/Shoes,1
+Credit Card Payments,0
+Deposits,1
+Dues and Subscriptions,0
+Education,0
+Electronics,1
+Entertainment,1
+Expense Reimbursement,0
+Gasoline/Fuel,1
+General Merchandise,1
+Gifts,1
+Groceries,1
+Healthcare/Medical,1
+Hobbies,1
+Home Improvement,1
+Home Maintenance,1
+Insurance,0
+Interest,0
+Investment Income,0
+Loans,0
+Mortgages,0
+Office Maintenance,1
+Office Supplies,1
+Online Services,1
+Other Bills,1
+Other Expenses,1
+Other Income,0
+Paychecks/Salary,0
+Personal Care,1
+Pets/Pet Care,1
+Postage and Shipping,1
+Printing,1
+Rent,0
+Restaurants/Dining,1
+Retirement Contributions,0
+Savings,0
+Securities Trades,0
+Service Charges/Fees,0
+Services,1
+Taxes,0
+Telephone Services,0
+Transfers,0
+Travel,1
+Uncategorized,0
+Utilities,0

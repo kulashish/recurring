@@ -1,0 +1,17 @@
+{
+    "contents" : "#source('../global/redshift_conn.R')\nsource('app_util_new.R')\nlibrary(rpart)\n#------------------------------------------------\n#Uncomment the below line and point to local JRE\n#------------------------------------------------\n#Sys.setenv(JAVA_HOME='C:\\\\Program Files\\\\Java\\\\jre7') # for 64-bit version\nlibrary(RWeka)\nlibrary(dplyr)\nlibrary(plyr)\n\ncats      <<- read.csv('categories.txt', header=T)\ncats.disc <<- cats[cats$discretionary==1, 'category']\npatterns  <<- read.csv('subscription.txt', header=F)\n#trans <- YodleeInsightsConnector.query(conn, query.rand)\n#trans <- YodleeInsightsConnector.query(conn, query.fix)\ntrans     <- read.csv('Top-100-Users-Trans-v4.csv', head=TRUE, sep='|', colClasses = c(UNIQUE.MEM.ID='character', UNIQUE.TRANSACTION.ID='character'), stringsAsFactors=F)\ndata.sim_df <- trans %>% group_by(UNIQUE.MEM.ID) %>% do(find_similar(.))\n#data.sim_df <- ddply(trans, .(UNIQUE.MEM.ID), find_similar)\nprocess_write(data.sim_df[, -1], 'trans_features_full.csv')\n\n#--------------------------------------------------------------------------\ndata  <- read.csv('trans_features_full-train-1-of-3.csv', header=T\n#                  ,col.names=c('mem', 'transaction_id', 'similar_transactions', 'desc',\n#                              'date_diff', 'date_var', 'amt', 'cat', 'discret', 'sub', 'label')\n                  #colClasses=c(rep('character',4), rep('numeric',3), 'character', rep('logical',3))\n                  )\ndata$label <- as.factor(data$label)\ndata[is.na(data)]   <- -1\n#model.dt  <- rpart(label ~ date_diff+date_var+amt+cat+discret+sub, data=data, method='class', control = rpart.control(cp = 0, xval=2))\nm <- PART(label ~ date_diff+date_var+amt+cat+discret+sub, data=data)\nprint(m)\n#plot(model.dt)\n#text(model.dt)\n\ndata.test  <- read.csv('trans_features_full-test-1-of-3.csv', header=T\n #                 ,col.names=c('mem', 'transaction_id', 'similar_transactions', 'desc',\n#                              'date_diff', 'date_var', 'amt', 'cat', 'discret', 'sub', 'label')\n                  #colClasses=c(rep('character',4), rep('numeric',3), 'character', rep('logical',3))\n)\ndata.test$label <- as.factor(data.test$label)\ndata.test[is.na(data.test)] <- -1\npred <- trans_predict(m, data.test)\n\n#--------Computation of Accuracy measures----------------------\nTP <- pred[(pred$label=='1') & (pred$pred=='1'), ]\nTN <- pred[(pred$label=='0') & (pred$pred=='0'), ]\nFP <- pred[(pred$label=='0') & (pred$pred=='1'), ]\nFN <- pred[(pred$label=='1') & (pred$pred=='0'), ]\nRecall <- nrow(TP) / (nrow(TP)+nrow(FN))\nPrecision <- nrow(TP) / (nrow(TP)+nrow(FP))\nF1 <- 2 * Recall * Precision / (Recall + Precision)\n\n#--------------------------------------------------------------------------\ndata.sample_index <- sample(nrow(data), as.integer(.6*nrow(data)))\nm <- PART(label ~ date_diff+date_var+amt+cat+discret+sub, data=data)\n\n",
+    "created" : 1437026176761.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1092203862",
+    "id" : "97ABBF28",
+    "lastKnownWriteTime" : 1437619755,
+    "path" : "C:/Users/akulkarni/RWorkspace/recurring-changes/app_new.R",
+    "project_path" : "app_new.R",
+    "properties" : {
+        "tempName" : "Untitled1"
+    },
+    "source_on_save" : false,
+    "type" : "r_source"
+}

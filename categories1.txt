@@ -1,0 +1,91 @@
+TRANSACTION.CATEGORY,DISCRETIONARY
+Advertising,1
+ATM/Cash Withdrawals,1
+ATM/Cash Withdrawals,0
+Automotive Expenses,0
+Automotive Expenses,1
+Business Miscellaneous,0
+Business Miscellaneous,1
+Cable/Satellite Services,0
+Cable/Satellite Services,1
+Charitable Giving,0
+Charitable Giving,1
+Checks,0
+Checks,1
+Child/Dependent Expenses,0
+Clothing/Shoes,1
+Clothing/Shoes,0
+Credit Card Payments,0
+Credit Card Payments,1
+Deposits,0
+Deposits,1
+Dues and Subscriptions,1
+Dues and Subscriptions,0
+Education,0
+Education,1
+Electronics,0
+Electronics,1
+Entertainment,1
+Entertainment,0
+Expense Reimbursement,0
+Gasoline/Fuel,1
+Gasoline/Fuel,0
+General Merchandise,1
+General Merchandise,0
+Gifts,1
+Gifts,0
+Groceries,1
+Groceries,0
+Healthcare/Medical,1
+Healthcare/Medical,0
+Hobbies,0
+Hobbies,1
+Home Improvement,1
+Home Improvement,0
+Home Maintenance,1
+Home Maintenance,0
+Insurance,0
+Insurance,1
+Interest,0
+Interest,1
+Investment Income,0
+Loans,0
+Loans,1
+Mortgages,0
+Office Maintenance,1
+Office Maintenance,0
+Office Supplies,1
+Office Supplies,0
+Online Services,1
+Online Services,0
+Other Bills,0
+Other Bills,1
+Other Expenses,1
+Other Expenses,0
+Other Income,0
+Paychecks/Salary,0
+Personal Care,1
+Pets/Pet Care,1
+Pets/Pet Care,0
+Postage and Shipping,1
+Printing,1
+Rent,0
+Restaurants/Dining,1
+Restaurants/Dining,0
+Retirement Contributions,0
+Savings,0
+Securities Trades,0
+Service Charges/Fees,0
+Service Charges/Fees,1
+Services,1
+Taxes,0
+Taxes,1
+Telephone Services,0
+Telephone Services,1
+Transfers,0
+Transfers,1
+Travel,1
+Uncategorized,0
+Uncategorized,1
+Utilities,1
+Utilities,0
